@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
+    const navigate = useNavigate(); 
     const handleSubmit= e=>{
         e.preventDefault();
     }
@@ -16,7 +17,8 @@ const Login = () => {
         }
         axios.post('/api/usuario/obtenerusuario',usuario)
         .then(res=>{
-            res.data.length>0 ? alert("Inicio de sesion correcto") : alert("Inicio de sesión errado"); 
+            //aca pueden poner a donde ir despues de un login correcto navigate()
+            res.data.length >0 ? navigate('/inicioCorrecto') : alert("inicio de sesión erroneo");
         })
     }
     return (
@@ -33,8 +35,6 @@ const Login = () => {
                             <input className="form-control" placeholder="Ingrese su cuenta de correo electrónico" type="email" id="title" name="title" onChange={(e) => setEmail(e.target.value)}/>
 
                         </div>
-
-
                         <div className="mb-3">
                             <label>Contraseña</label>
                             <input className="form-control" placeholder="Ingrese su contraseña" type="password" id="author" name="author" onChange={(e) => setPassword(e.target.value)} required/>
@@ -43,11 +43,8 @@ const Login = () => {
                         <div>
                         <label>¿Todavía no tienes una cuenta?</label>
                         <Link to="/register" className="nav-link" >Registrate<span className="sr-only"></span></Link>
-
                         </div>
-
                     </form>
-
                 </div>
             </div>
         </div>

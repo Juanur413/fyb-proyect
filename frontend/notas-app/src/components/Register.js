@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import uniquid from 'uniqid'
 import axios from 'axios'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
-
+    const navigate = useNavigate();
     const handleSubmit = (e)=>{
         e.preventDefault();
     }
@@ -18,7 +18,8 @@ const Register = () => {
         }
         axios.post('/api/usuario/agregarusuario',usuario)
         .then(res=>{
-            alert(res.data)
+            //aca pueden poner a donde ir despues de un login correcto navigate()
+            res ? navigate('/registroCorrecto') : alert("Error en el registro");
         })
         .then(err=>{console.log(err)})
     }

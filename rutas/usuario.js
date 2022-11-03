@@ -24,7 +24,7 @@ router.post('/agregarusuario',(req,res)=>{
     })
     nuevousuario.save(function(err){
         if(!err){
-            res.send('usuario Registrado correctamente')
+            res.send(true)
         }else{
             res.send(err)
         }
