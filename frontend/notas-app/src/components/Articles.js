@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import Global from '../Global';
 import Article from './Article';
 
 const Articles = () => {
 
     const [articles, setArticles] = useState([]);
-    const url = Global.url;
 
     useEffect(() => {
         getArticles();
@@ -17,8 +15,8 @@ const Articles = () => {
     //Obtenemos los artículos
 
     const getArticles = () => {
-        axios.get(url + "articles").then(res => {
-            setArticles(res.data.articles);
+        axios.get('/api/usuario/totalblogs').then(res => {
+            setArticles(res.data);
         });
     }
 
@@ -26,18 +24,19 @@ const Articles = () => {
 
     const deleteArticle = (id) => {
         const idArticle = articles[id]._id;
-        axios.delete(url + "delete/" + idArticle).then(res => {
+        /*axios.delete(url + "delete/" + idArticle).then(res => {
             getArticles();
-        });
+        });*/
     }
+    console.log(articles[0])
 
     //Editar un artículo
     
     const editArticle = (id) => {
         const idArticle = articles[id]._id;
-        axios.edit(url + "edit/" + idArticle).then(res => {
+        /*axios.edit(url + "edit/" + idArticle).then(res => {
             getArticles();
-        });
+        });*/
     }
 
     return (

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
-import Global from '../Global';
 
 const New = () => {
 
-    const url = Global.url;
-
     const [article, setArticle] = useState({
         title: null,
-        content: null,
-        author: null
+        texto: null,
+        propietario: null,
+        img: null
+
     });
 
     const [redirect, setRedirect] = useState(false);
@@ -19,36 +18,42 @@ const New = () => {
     let titleRef = React.createRef();
     let contentRef = React.createRef();
     let authorRef = React.createRef();
+    let imgRef = React.createRef();
 
     const changeState = () => {
-
         setArticle({
             title: titleRef.current.value,
-            content: contentRef.current.value,
-            author: authorRef.current.value
+            texto: contentRef.current.value,
+            propietario: authorRef.current.value,
+            img: imgRef.current.value
         });
-
-        console.log(article);
-
     }
 
     const sendData = (e) => {
-
         //Evitamos que al recibir los datos se recargue la pantalla:
         e.preventDefault();
-
         changeState();
-
         //Petición http por POST para guardar el artículo:
-        axios.post(url + 'save', article).then(res => {
-            setRedirect(true);
-            console.log(res.data);
-        });
-
+        axios.post('/api/usuario/agregarblog',article)
+        .then(res=>{
+            console.log(res)
+            //setRedirect(true);
+        })
+        .then(err=>console.log(err))
     }
 
+    //forma de obtener todos los articulos existentes
+    axios.get('/api/usuario/totalblogs')
+    .then(res=>{
+        console.log(res);
+    })
+    //forma de obtener los articulos segun un creador
+    axios.post('/api/usuario/blogspublicados',{propietario:"Ruben Urrego"})
+    .then(res=>{
+        console.log(res.data)
+    })
     if(redirect){
-        return <Navigate to="articles" />;
+        return <Navigate to="/articles" />;
     }
 
     return (
@@ -79,12 +84,12 @@ const New = () => {
                         </div>
 
                         <div class="input-group mb-3">
-                             <label>Subir Adjunto</label>
-                             <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload"/>
+                             <label>Url img Adjunto</label>
+                             <input type="text" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" ref={imgRef} onChange={changeState} aria-label="Upload" required/>
                         </div>
 
                         <div className="mb-3">
-                            <input className="form-control btn btn-primary" type="submit" id="publish" value="Publicar" />
+                            <input className="form-control btn btn-primary" type="submit" id="publish" value="Publicar"/>
                         </div>
 
                     </form>

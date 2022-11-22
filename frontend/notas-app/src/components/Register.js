@@ -23,7 +23,7 @@ const Register = () => {
         })
         .then(err=>{console.log(err)})
     }
-
+    
     return (
         <div className="nueva-publicacion">
 
@@ -40,8 +40,6 @@ const Register = () => {
                             <input className="form-control" placeholder="Ingrese su cuenta de correo electrónico" type="email" id="title" name="title" onChange={(e) => setEmail(e.target.value)}/>
 
                         </div>
-
-
                         <div className="mb-3">
                             <label>Contraseña</label>
                             <input className="form-control" placeholder="Ingrese su nueva contraseña" type="password" id="author" name="author" onChange={(e) => setPassword(e.target.value)}/>
