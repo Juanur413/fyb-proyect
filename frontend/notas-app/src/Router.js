@@ -8,7 +8,7 @@ import Register from './components/Register'
 
 const Router = () => {
     return (
-
+        
         <BrowserRouter>
             <Header />
 
