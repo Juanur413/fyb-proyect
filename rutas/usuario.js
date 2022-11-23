@@ -50,18 +50,21 @@ router.get('/totalblogs', async (req,res)=>{
     res.send(blog);
 })
 router.post('/agregarusuario',(req,res)=>{
-    const nuevousuario = new ModeloUsuario({
-        email:req.body.email,
-        password: req.body.password,
-        idusuario:req.body.idusuario
-    })
-    nuevousuario.save(function(err){
-        if(!err){
-            res.send(true)
-        }else{
-            res.send(err)
-        }
-    })
+    if(req.body.email && req.body.password){
+        const nuevousuario = new ModeloUsuario({
+            email:req.body.email,
+            password: req.body.password,
+            idusuario:req.body.idusuario
+        })
+        nuevousuario.save(function(err){
+            if(!err){
+                res.send(true)
+            }else{
+                res.send(err)
+            }
+        })
+    }
+    res.send(null);
 })
 
 //obtener usuario

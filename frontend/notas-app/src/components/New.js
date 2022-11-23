@@ -41,17 +41,6 @@ const New = () => {
         })
         .then(err=>console.log(err))
     }
-
-    //forma de obtener todos los articulos existentes
-    axios.get('/api/usuario/totalblogs')
-    .then(res=>{
-        console.log(res.data);
-    })
-    //forma de obtener los articulos segun un creador
-    axios.post('/api/usuario/blogspublicados',{propietario:"Ruben Urrego"})
-    .then(res=>{
-        console.log(res.data)
-    })
     if(redirect){
         return <Navigate to="/articles" />;
     }
