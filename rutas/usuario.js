@@ -64,7 +64,9 @@ router.post('/agregarusuario',(req,res)=>{
             }
         })
     }
-    res.send(null);
+    else{
+        res.send("");
+    }
 })
 
 //obtener usuario

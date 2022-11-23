@@ -17,6 +17,7 @@ const Login = () => {
         }
         axios.post('/api/usuario/obtenerusuario',usuario)
         .then(res=>{
+            console.log(res);
             //aca pueden poner a donde ir despues de un login correcto navigate()
             res.data.length >0 ? navigate('/inicioCorrecto') : alert("inicio de sesión erroneo");
         })
