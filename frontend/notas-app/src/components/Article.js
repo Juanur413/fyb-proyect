@@ -2,11 +2,10 @@ import React from 'react';
 
 const Article = ({ id, articleData, delArticle }) => {
 
-    const { title, date, content, author } = articleData;
+    const { title, texto, propietario, img  } = articleData;
 
-    const formatDate = (date) => {
-        return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);
-    }
+    //const formatDate = (date) => {
+       // return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);}
 
     const del = () => {
         delArticle(id);
@@ -23,12 +22,13 @@ const Article = ({ id, articleData, delArticle }) => {
             </div>
 
             <div className="card-body">
-                <label className="card-text text-start">{content}</label>
+                <image className='imagenArticulo'>Imagen: {img}</image>
+                <label className="card-text text-start">{texto}</label>
             </div>
 
             <ul className="list-group list-group-flush">
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Publicado el: {formatDate(date)}</li>
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Autor: {author}</li>
+                
+                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Autor: {propietario}</li>
             </ul>
 
             <div className="card-footer">

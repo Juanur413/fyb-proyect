@@ -5,6 +5,7 @@ import New from './components/New';
 import Articles from './components/Articles';
 import Login from './components/Login';
 import Register from './components/Register'
+import TotalBlogs from './components/TotalBlogs';
 
 const Router = () => {
     return (
@@ -13,7 +14,8 @@ const Router = () => {
             <Header />
 
             <Routes>
-                <Route exact path="/" element={<Login />} />
+                <Route exact path="/" element={<TotalBlogs />} />
+                <Route exact path="/login" element={<Login />} />
                 <Route exact path="/register" element={<Register />} />
                 <Route exact path="/new" element={<New />} />
                 <Route exact path="/articles" element={<Articles />} />

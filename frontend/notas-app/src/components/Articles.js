@@ -20,6 +20,14 @@ const Articles = () => {
         });
     }
 
+    //obtenemos los artículos por autor
+
+    //const getArticlesPropietario= () =>{
+        //axios.get('/api/usuario/blogspublicados',{propietario:"Ruben Urrego"})
+       //  .then(res=>{
+       // console.log(res.data)
+    //})}
+
     //Eliminamos un artículo por su id
 
     const deleteArticle = (id) => {
@@ -39,6 +47,7 @@ const Articles = () => {
         });*/
     }
 
+    
     return (
 
         <div className="publicaciones">
