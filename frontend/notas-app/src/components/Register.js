@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import uniquid from 'uniqid'
 import axios from 'axios'
 import { Link, useNavigate } from "react-router-dom";
+import './register.css';
 
 const Register = () => {
     const [email,setEmail] = useState("");
@@ -29,7 +30,7 @@ const Register = () => {
     return (
         <div className="nueva-publicacion">
 
-            <div id="formulario" className="card mx-auto mb-3 mt-5" style={{ width: '30em' }}>
+            <div id="formulario" className="card mx-auto mb-3 mt-5">
                 <div id="card-header" className="card-header text-dark">
                     <h4>Registrarse</h4>
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import './article.css';
 
 const Article = ({ id, articleData, delArticle }) => {
 
@@ -22,7 +23,7 @@ const Article = ({ id, articleData, delArticle }) => {
             </div>
 
             <div className="card-body">
-                <image className='imagenArticulo'>Imagen: {img}</image>
+                <image className='imagenArticulo'>{img}</image>
                 <label className="card-text text-start">{texto}</label>
             </div>
 
