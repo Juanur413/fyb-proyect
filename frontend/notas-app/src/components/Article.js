@@ -18,11 +18,11 @@ const Article = ({ id, articleData, delArticle }) => {
         <div className="col">
         <div className="card mx-auto mb-3">
 
-            <div className="card-header">
+            <div className="c-header">
                 <image className='imagenArticulo'>{img}</image>
             </div>
 
-            <div className="card-body">
+            <div className="body-card">
                 <h1 className="card-title">{title}</h1>
                 <p className="card-text text-start">{texto}</p>
                 <h4 className='autor'>Autor: {propietario} </h4>
