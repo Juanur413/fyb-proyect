@@ -1,0 +1,54 @@
+.card-title{
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.card-header{
+    height: 20em;
+    width: 32em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-text{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnEliminar{
+    background: #A91E09;
+}
+
+.btnEditar{
+    background: #0017E5;
+}
+
+.btnEliminar:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+.btnEditar:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2em;
+    width: 35em;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 10em;
+}
+h4{
+    font-size: 16px;
+}
+p{
+    font-size: 20px;
+}

@@ -78,9 +78,9 @@ const Edit = () => {
                             <input className="form-control" placeholder="Escriba el nombre de la persona que escribió el artículo" type="text" id="author" name="author" ref={authorRef} onChange={changeState} required />
                         </div>
 
-                        <div class="input-group mb-3">
+                        <div className="input-group mb-3">
                              <label>Subir Adjunto</label>
-                             <input type="file" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload"/>
+                             <input type="file" className="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload"/>
                         </div>
 
                         <div className="mb-3">

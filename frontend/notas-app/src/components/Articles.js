@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Article from './Article';
+import './articles.css';
 
 const Articles = () => {
 
@@ -19,6 +20,14 @@ const Articles = () => {
             setArticles(res.data);
         });
     }
+
+    //obtenemos los artículos por autor
+
+    //const getArticlesPropietario= () =>{
+        //axios.get('/api/usuario/blogspublicados',{propietario:"Ruben Urrego"})
+       //  .then(res=>{
+       // console.log(res.data)
+    //})}
 
     //Eliminamos un artículo por su id
 
@@ -39,13 +48,14 @@ const Articles = () => {
         });*/
     }
 
+    
     return (
 
         <div className="publicaciones">
             <h1 className="mt-5">Artículos</h1>
             <br /><br />
             <div className="container">
-                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-2">
+                <div className="articles-container">
                     {
                         articles.length > 0 ? (
 
@@ -58,7 +68,7 @@ const Articles = () => {
 
                                     <Article
                                         key={i}
-                                        id={i}
+                                        id={article._id}
                                         articleData={article}
                                         delArticle={deleteArticle}
 
