@@ -1,15 +1,16 @@
 .card-body{
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .card-text{
-    height: 3em;
-    width: 25em;
-    font-size: 20px;
+    height: auto;
+    max-width: 25em;
+    font-size: 14px;
 }
 .card-title{
-    margin-top: 25px;
+    margin-top: 2px;
     display: flex;
     flex-direction: column;
     justify-content: center;

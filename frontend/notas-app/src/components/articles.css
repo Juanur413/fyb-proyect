@@ -4,3 +4,10 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.articles-container{
+    width: 76em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

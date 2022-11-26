@@ -3,26 +3,38 @@
     font-size: 26px;
 }
 
-.card-header{
+.c-header{
     height: 20em;
-    width: 32em;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+.c-header img {
+    width: 400px;
+    max-height: 300px;
+
+}
+
 .card-text{
     font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    max-width: 30em;
 }
 
 .btnEliminar{
     background: #A91E09;
+    width: 10em;
+    height: 3em;
 }
 
 .btnEditar{
     background: #0017E5;
+    width: 10em;
+    height: 3em;
 }
 
 .btnEliminar:hover{
@@ -36,16 +48,28 @@
 .col{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding-top: 2em;
     width: 35em;
+    padding: 0px;
+    margin: 3em;
+    flex-wrap: wrap;
 }
-.card-body{
+.body-card{
     display: flex;
     flex-direction: column;
     width: auto;
     height: 10em;
+    align-items: center;
 }
+
+.card{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
 h4{
     font-size: 16px;
 }
