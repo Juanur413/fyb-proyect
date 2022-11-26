@@ -86,7 +86,7 @@ router.post('/obtenerusuario',(req,res)=>{
 
 
 router.post('/editarblog',async(req,res)=>{
-    const blog = await ModeloBlog.updateOne({_id:req.body.id},{tittle:req.body.title,propietario:req.body.propietario,texto:req.body.texto,img:req.body.img})
+    const blog = await ModeloBlog.updateOne({_id:req.body._id},{tittle:req.body.title,propietario:req.body.propietario,texto:req.body.texto,img:req.body.img})
     res.send("Cambio realizado con exito");
 })
 

@@ -4,6 +4,7 @@ import { Navigate, useParams } from 'react-router-dom';
 
 const Edit = () => {
     const [article, setArticle] = useState([]) 
+    const [editedArti, setEditArt] = useState([])
     const {id} = useParams();
     useEffect(()=>{  
         axios.post('/api/usuario/buscarBlog',{id}).then(res=>setArticle(res.data))
@@ -19,7 +20,8 @@ const Edit = () => {
     let imgRef = React.createRef();
 
     const changeState = () => {
-        setArticle({
+        setEditArt({
+            _id:id,
             title: titleRef.current.value,
             texto: contentRef.current.value,
             //propietario: authorRef.current.value,
@@ -32,13 +34,13 @@ const Edit = () => {
         e.preventDefault();
         changeState();
         //Petición http por POST para guardar el artículo:
-        /*axios.post('/api/usuario/agregarblog',article)
+        axios.post('/api/usuario/editarblog',editedArti)
         .then(res=>{
             console.log(res)
             setRedirect(true);
         })
         .then(err=>console.log(err))
-        */
+        
     }
     if(redirect){
         return <Navigate to="/articles" />;
