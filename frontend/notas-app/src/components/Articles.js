@@ -10,14 +10,14 @@ const Articles = () => {
     useEffect(() => {
         getArticles();
         console.log(articles);
-    }, [articles]);
+    }, [articles.length]);
 
 
     //Obtenemos los artículos
 
     const getArticles = () => {
         axios.get('/api/usuario/totalblogs').then(res => {
-            setArticles(res.data);
+            setArticles(res.data===undefined ? [] : res.data);
         });
     }
 
@@ -36,15 +36,13 @@ const Articles = () => {
             getArticles();
         });
     }
-    console.log(articles[0])
 
     //Editar un artículo
     
-    const editArticle = (id) => {
-        const idArticle = articles[id]._id;
-        /*axios.edit(url + "edit/" + idArticle).then(res => {
+    const editArticle = (datos) => {
+        axios.post('/api/usuario/editarBlog',datos).then(res=>{
             getArticles();
-        });*/
+        })
     }
 
     
@@ -70,6 +68,7 @@ const Articles = () => {
                                         id={article._id}
                                         articleData={article}
                                         delArticle={deleteArticle}
+                                        editArticle={editArticle}
 
                                     />
 
