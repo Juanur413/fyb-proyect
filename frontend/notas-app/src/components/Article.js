@@ -10,7 +10,6 @@ const Article = ({ id, articleData, delArticle }) => {
 
     const del = () => {
         delArticle(id);
-
     }
 
 

@@ -10,7 +10,7 @@ const Articles = () => {
     useEffect(() => {
         getArticles();
         console.log(articles);
-    }, [articles.length]);
+    }, [articles]);
 
 
     //Obtenemos los artículos
@@ -32,10 +32,9 @@ const Articles = () => {
     //Eliminamos un artículo por su id
 
     const deleteArticle = (id) => {
-        const idArticle = articles[id]._id;
-        /*axios.delete(url + "delete/" + idArticle).then(res => {
+        axios.post('/api/usuario/eliminarBlog',{id:id}).then(res => {
             getArticles();
-        });*/
+        });
     }
     console.log(articles[0])
 
