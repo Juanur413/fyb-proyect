@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Article from './Article';
 import logo from '../assets/images/logoFYB.png';
+import './totalblogs.css';
 
 const TotalBlogs = () => {
 
@@ -29,18 +30,10 @@ const TotalBlogs = () => {
     return (
 
         <div>
-            <div className="card mb-3 p-4" >
-                <div className="row g-0">
-                    <div class="col-md-4">
-                    <img src= {logo} className="img-fluid rounded-start w-50" alt="..." />
-                    </div>
-                    <div className="col-md-8">
-                    <div className="card-body">
-                        <h3 className="card-title">FYB Blogs</h3>
+            <div className="info-card" >
+                <div className="page-header">
+                        <h3 className="card-title">For You Blogs</h3>
                         <p className="card-text">For You Blog es una página de blogs personales, donde cada persona tiene la posibilidad de poder publicar su blog o artículo sobre algún tema en específico de su gusto.</p>
-                       
-                    </div>
-                    </div>
                 </div>
                 </div>
 

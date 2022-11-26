@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import './new.css';
 
 const New = () => {
 
@@ -56,21 +57,22 @@ const New = () => {
                 <div className="card-body">
                     <form onSubmit={sendData}>
 
-                        <div className="mb-3">
+                        <div className="title">
                             <label>Título</label>
                             <input className="form-control" placeholder="Escriba el título del artículo" type="text" id="title" name="title" ref={titleRef} onChange={changeState} required />
 
                         </div>
 
-                        <div className="mb-3">
+                        <div className="content">
                             <label>Contenido</label>
                             <textarea className="form-control" placeholder="Escriba el contenido del artículo" rows="6" cols="30" ref={contentRef} onChange={changeState} required />
                         </div>
 
 
                         <div className="input-group mb-3">
-                             <label>Url img Adjunto</label>
-                             <input type="text" className="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" ref={imgRef} onChange={changeState} aria-label="Upload" required/>
+                            <label>Url img Adjunto</label>
+                            <br/>
+                            <input type="text" className="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" ref={imgRef} onChange={changeState} aria-label="Upload" required/>
                         </div>
 
                         <div className="mb-3">

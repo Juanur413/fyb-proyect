@@ -1,0 +1,19 @@
+.card-body{
+    width: auto;
+    height: auto;
+}
+
+.card-header{
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    width: auto;
+    height: auto;
+}
+.content{
+    padding-top:10px;
+}
