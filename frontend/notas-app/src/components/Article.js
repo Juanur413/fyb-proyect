@@ -1,43 +1,43 @@
 import React from 'react';
+import './article.css';
+import {Link} from 'react-router-dom';
 
-const Article = ({ id, articleData, delArticle }) => {
-
-    const { title, date, content, author } = articleData;
-
-    const formatDate = (date) => {
-        return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);
-    }
+const Article = ({ id, articleData, delArticle,editArticle }) => {
+    
+    const { title, texto, propietario, img  } = articleData;
+    //const formatDate = (date) => {
+       // return date.substring(8, 10) + date.substring(4, 8) + date.substring(0, 4);}
 
     const del = () => {
         delArticle(id);
-
     }
-
+    const edit = ()=>{
+        editArticle(id)
+    }
 
     return (
         <div className="col">
         <div className="card mx-auto mb-3">
 
-            <div className="card-header">
-                <h3 className="card-title">{title}</h3>
+            <div className="c-header">
+                <img className='imagenArticulo' src={img} alt="Not working"></img>
             </div>
 
-            <div className="card-body">
-                <label className="card-text text-start">{content}</label>
+            <div className="body-card">
+                <h1 className="card-title">{title}</h1>
+                <p className="card-text text-start">{texto}</p>
+                <h4 className='autor'>Autor: {propietario} </h4>
             </div>
-
-            <ul className="list-group list-group-flush">
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Publicado el: {formatDate(date)}</li>
-                <li className=" list-pub list-group-item" style={{ 'fontSize': 12 }}>Autor: {author}</li>
-            </ul>
 
             <div className="card-footer">
                 <button type="button" className="btnEliminar btn-danger btn-sm" onClick={del}>
                     Eliminar
                 </button>
-                <button type="button" className="btnEditar btn-primary btn-sm" onClick={del}>
+                    <Link to={`/Edit/${id}`}>
+                <button type="button" className="btnEditar btn-primary btn-sm" onClick={edit}>
                     Editar
                 </button>
+                    </Link>
             </div>
         </div>
         </div>

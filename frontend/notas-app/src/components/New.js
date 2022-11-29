@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Navigate } from 'react-router-dom';
+import './new.css';
 
 const New = () => {
 
@@ -17,14 +18,14 @@ const New = () => {
     //Referencia de los datos del formulario:
     let titleRef = React.createRef();
     let contentRef = React.createRef();
-    let authorRef = React.createRef();
+    //let authorRef = React.createRef();
     let imgRef = React.createRef();
 
     const changeState = () => {
         setArticle({
             title: titleRef.current.value,
             texto: contentRef.current.value,
-            propietario: authorRef.current.value,
+            //propietario: authorRef.current.value,
             img: imgRef.current.value
         });
     }
@@ -37,7 +38,7 @@ const New = () => {
         axios.post('/api/usuario/agregarblog',article)
         .then(res=>{
             console.log(res)
-            //setRedirect(true);
+            setRedirect(true);
         })
         .then(err=>console.log(err))
     }
@@ -56,25 +57,22 @@ const New = () => {
                 <div className="card-body">
                     <form onSubmit={sendData}>
 
-                        <div className="mb-3">
+                        <div className="title">
                             <label>Título</label>
                             <input className="form-control" placeholder="Escriba el título del artículo" type="text" id="title" name="title" ref={titleRef} onChange={changeState} required />
 
                         </div>
 
-                        <div className="mb-3">
+                        <div className="content">
                             <label>Contenido</label>
                             <textarea className="form-control" placeholder="Escriba el contenido del artículo" rows="6" cols="30" ref={contentRef} onChange={changeState} required />
                         </div>
 
-                        <div className="mb-3">
-                            <label>Autor</label>
-                            <input className="form-control" placeholder="Escriba el nombre de la persona que escribió el artículo" type="text" id="author" name="author" ref={authorRef} onChange={changeState} required />
-                        </div>
 
-                        <div class="input-group mb-3">
-                             <label>Url img Adjunto</label>
-                             <input type="text" class="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" ref={imgRef} onChange={changeState} aria-label="Upload" required/>
+                        <div className="input-group mb-3">
+                            <label>Url img Adjunto</label>
+                            <br/>
+                            <input type="text" className="form-control" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" ref={imgRef} onChange={changeState} aria-label="Upload" required/>
                         </div>
 
                         <div className="mb-3">

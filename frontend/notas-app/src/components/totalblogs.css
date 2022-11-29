@@ -1,0 +1,27 @@
+.card-body{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-text{
+    height: auto;
+    max-width: 25em;
+    font-size: 14px;
+}
+.card-title{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 5em;
+    width: 12em;
+    font-weight: bold;
+}
+.page-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

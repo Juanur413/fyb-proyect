@@ -1,0 +1,7 @@
+.navbar{
+    background: #005686;
+}
+.App-logo:hover{
+    transform: scale(1.3);
+    transition-duration: 1s;
+}

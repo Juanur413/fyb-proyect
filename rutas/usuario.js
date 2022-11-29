@@ -45,6 +45,10 @@ router.post('/blogspublicados', async (req,res)=>{
     res.send(blogsSegunUser);
 })
 
+router.post('/buscarBlog', async(req,res)=>{
+    const blogBuscado = await ModeloBlog.find({_id:req.body.id});
+    res.send(blogBuscado);
+})
 router.get('/totalblogs', async (req,res)=>{
     let blog = await ModeloBlog.find();
     res.send(blog);
@@ -78,4 +82,15 @@ router.post('/obtenerusuario',(req,res)=>{
             res.send(err)
         }
     })
+})
+
+
+router.post('/editarblog',async(req,res)=>{
+    const blog = await ModeloBlog.updateOne({_id:req.body._id},{tittle:req.body.title,propietario:req.body.propietario,texto:req.body.texto,img:req.body.img})
+    res.send("Cambio realizado con exito");
+})
+
+router.post('/eliminarBlog',async(req,res)=>{
+    const blog = await ModeloBlog.deleteOne({_id:req.body.id});
+    res.send("BLOG ELIMINADO")
 })

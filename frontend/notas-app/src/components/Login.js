@@ -19,9 +19,12 @@ const Login = () => {
         .then(res=>{
             console.log(res);
             //aca pueden poner a donde ir despues de un login correcto navigate()
-            res.data.length >0 ? navigate('/inicioCorrecto') : alert("inicio de sesión erroneo");
+            res.data.length >0 ? navigate('/articles') : alert("inicio de sesión erroneo");
         })
+
+    
     }
+
     return (
         <div className="nueva-publicacion">
             <div id="formulario" className="card mx-auto mb-3 mt-5" style={{ width: '30em' }}>
@@ -40,7 +43,7 @@ const Login = () => {
                             <label>Contraseña</label>
                             <input className="form-control" placeholder="Ingrese su contraseña" type="password" id="author" name="author" onChange={(e) => setPassword(e.target.value)} required/>
                         </div>
-                        <button onClick={ingresarUsuario} type="submit" class="btn btn-primary mb-3">Ingresar</button>
+                        <button onClick={ingresarUsuario} type="submit" className="btn btn-primary mb-3">Ingresar</button>
                         <div>
                         <label>¿Todavía no tienes una cuenta?</label>
                         <Link to="/register" className="nav-link" >Registrate<span className="sr-only"></span></Link>
