@@ -38,5 +38,9 @@
       "last 1 safari version"
     ]
   },
+<<<<<<< HEAD
   "proxy": "https://fyb-prueba.onrender.com/"
+=======
+  "proxy": "https://fyb-proyect.onrender.com"
+>>>>>>> 4eb0dfa76ac7b0cadcb33dd0aff85cec6a908d97
 }
